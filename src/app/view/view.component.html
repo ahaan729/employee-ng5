@@ -1,0 +1,26 @@
+<br>
+<div class="container">
+  <div *ngIf="employeeDetails.length != 0">
+    <br>
+    <h3 class="truncate">Employee Details</h3>
+    <br>
+    <table class="responsive-table bordered">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email Address</th>
+        <th>Phone No.</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let emp of employeeDetails; let i=index">
+        <td>{{emp.firstName}} {{emp.lastName}}</td>
+        <td>{{emp.age}}</td>
+        <td>{{emp.emailAddress}}</td>
+        <td>{{emp.phoneNo}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
