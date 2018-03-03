@@ -41,11 +41,11 @@ export class AddComponent implements OnInit {
   // Creating Employee Form
   createForm() {
     this.employeeForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      age: ['', Validators.required],
-      emailAddress: ['', Validators.required],
-      phoneNo: ['', Validators.required]
+      firstName: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ['', [Validators.required, Validators.minLength(2)]],
+      age: ['', [Validators.required, Validators.min(18), Validators.max(60)]],
+      emailAddress: ['', [Validators.required, Validators.email]],
+      phoneNo: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 
